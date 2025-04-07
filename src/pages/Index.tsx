@@ -1,13 +1,139 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+
+import React from 'react';
+import Layout from '../components/Layout';
+import Hero from '../components/Hero';
+import CategoryCard from '../components/CategoryCard';
+import ProductCard from '../components/ProductCard';
+import { Button } from "@/components/ui/button";
+import { Link } from 'react-router-dom';
+import { categories } from '../data/products';
+import products from '../data/products';
+
+const featuredProducts = products.slice(0, 4);
 
 const Index = () => {
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4">Welcome to Your Blank App</h1>
-        <p className="text-xl text-gray-600">Start building your amazing project here!</p>
-      </div>
-    </div>
+    <Layout>
+      <Hero />
+      
+      {/* Categories Section */}
+      <section className="py-16 bg-muted/30">
+        <div className="container">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold mb-4">Explore Our Collections</h2>
+            <p className="text-muted-foreground max-w-2xl mx-auto">
+              Discover authentic Indian treasures across various categories, each with its unique cultural significance and artistic heritage.
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {categories.map((category) => (
+              <CategoryCard
+                key={category.id}
+                title={category.name}
+                description={category.description}
+                image={category.image}
+                link={`/products?category=${category.name}`}
+              />
+            ))}
+          </div>
+        </div>
+      </section>
+      
+      {/* Featured Products */}
+      <section className="py-16">
+        <div className="container">
+          <div className="flex justify-between items-end mb-12">
+            <div>
+              <h2 className="text-3xl font-bold mb-2">Featured Treasures</h2>
+              <p className="text-muted-foreground max-w-2xl">
+                Our handpicked selection of authentic Indian crafts and treasures, each with a story to tell.
+              </p>
+            </div>
+            <Button asChild variant="outline">
+              <Link to="/products">View All</Link>
+            </Button>
+          </div>
+          
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {featuredProducts.map((product) => (
+              <ProductCard key={product.id} product={product} />
+            ))}
+          </div>
+        </div>
+      </section>
+      
+      {/* AI Feature Showcase */}
+      <section className="py-16 bg-gradient-to-r from-indian-saffron/10 to-indian-green/10 pattern-bg">
+        <div className="container">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div>
+              <h2 className="text-3xl font-bold mb-4">Discover the Stories Behind the Crafts</h2>
+              <p className="text-lg mb-6">
+                Our AI-powered cultural guide reveals the rich history and traditions behind each authentic Indian treasure. Learn about the craftsmanship, regional significance, and cultural heritage as you shop.
+              </p>
+              <ul className="space-y-3 mb-8">
+                <li className="flex items-start">
+                  <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-indian-saffron text-white mr-3">✓</span>
+                  <span>Explore centuries-old craft traditions</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-indian-saffron text-white mr-3">✓</span>
+                  <span>Understand regional influences and techniques</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-indian-saffron text-white mr-3">✓</span>
+                  <span>Learn about materials and traditional methods</span>
+                </li>
+              </ul>
+              <Button asChild className="bg-indian-blue hover:bg-indian-blue/90">
+                <Link to="/products">Explore & Learn</Link>
+              </Button>
+            </div>
+            
+            <div className="relative">
+              <div className="rounded-lg overflow-hidden shadow-lg">
+                <img 
+                  src="https://images.unsplash.com/photo-1565942443747-e4e66f3a58d4?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" 
+                  alt="Indian artisan at work" 
+                  className="w-full h-auto"
+                />
+              </div>
+              <div className="absolute -bottom-6 -left-6 bg-white rounded-lg shadow-lg p-4 w-64">
+                <div className="text-sm font-medium mb-1">AI Cultural Guide</div>
+                <p className="text-xs text-muted-foreground">
+                  "Discover how these lac bangles are handcrafted by artisans in Rajasthan using techniques passed down through generations..."
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      {/* Cultural Regions */}
+      <section className="py-16">
+        <div className="container">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold mb-4">Artisan Crafts from Across India</h2>
+            <p className="text-muted-foreground max-w-2xl mx-auto">
+              Each region of India has its unique craft traditions. Discover authentic treasures from these culturally rich states.
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+            {["Rajasthan", "Kashmir", "Gujarat", "Tamil Nadu", "West Bengal", "Kerala"].map((region) => (
+              <Link 
+                key={region} 
+                to={`/products?region=${region}`} 
+                className="bg-muted/50 hover:bg-muted transition-colors py-4 px-2 rounded-md text-center"
+              >
+                <div className="font-medium">{region}</div>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+    </Layout>
   );
 };
 
