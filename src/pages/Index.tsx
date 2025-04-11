@@ -17,10 +17,10 @@ const Index = () => {
       <Hero />
       
       {/* Categories Section */}
-      <section className="py-16 bg-muted/30">
+      <section className="py-16 bg-secondary/30">
         <div className="container">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold mb-4">Explore Our Collections</h2>
+            <h2 className="text-3xl font-bold mb-4 text-indian-brown font-heading">Explore Our Collections</h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">
               Discover authentic Indian treasures across various categories, each with its unique cultural significance and artistic heritage.
             </p>
@@ -45,12 +45,12 @@ const Index = () => {
         <div className="container">
           <div className="flex justify-between items-end mb-12">
             <div>
-              <h2 className="text-3xl font-bold mb-2">Featured Treasures</h2>
+              <h2 className="text-3xl font-bold mb-2 text-indian-brown font-heading">Featured Treasures</h2>
               <p className="text-muted-foreground max-w-2xl">
                 Our handpicked selection of authentic Indian crafts and treasures, each with a story to tell.
               </p>
             </div>
-            <Button asChild variant="outline">
+            <Button asChild variant="outline" className="border-indian-terracotta text-indian-terracotta hover:bg-indian-terracotta/10">
               <Link to="/products">View All</Link>
             </Button>
           </div>
@@ -64,29 +64,29 @@ const Index = () => {
       </section>
       
       {/* AI Feature Showcase */}
-      <section className="py-16 bg-gradient-to-r from-indian-saffron/10 to-indian-green/10 pattern-bg">
+      <section className="py-16 bg-[#f8f3ea] pattern-bg">
         <div className="container">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
-              <h2 className="text-3xl font-bold mb-4">Discover the Stories Behind the Crafts</h2>
-              <p className="text-lg mb-6">
+              <h2 className="text-3xl font-bold mb-4 text-indian-brown font-heading">Discover the Stories Behind the Crafts</h2>
+              <p className="text-lg mb-6 text-[#5a4a3a]">
                 Our AI-powered cultural guide reveals the rich history and traditions behind each authentic Indian treasure. Learn about the craftsmanship, regional significance, and cultural heritage as you shop.
               </p>
               <ul className="space-y-3 mb-8">
                 <li className="flex items-start">
-                  <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-indian-saffron text-white mr-3">✓</span>
-                  <span>Explore centuries-old craft traditions</span>
+                  <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-[#a18267] text-white mr-3">✓</span>
+                  <span className="text-[#5a4a3a]">Explore centuries-old craft traditions</span>
                 </li>
                 <li className="flex items-start">
-                  <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-indian-saffron text-white mr-3">✓</span>
-                  <span>Understand regional influences and techniques</span>
+                  <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-[#a18267] text-white mr-3">✓</span>
+                  <span className="text-[#5a4a3a]">Understand regional influences and techniques</span>
                 </li>
                 <li className="flex items-start">
-                  <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-indian-saffron text-white mr-3">✓</span>
-                  <span>Learn about materials and traditional methods</span>
+                  <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-[#a18267] text-white mr-3">✓</span>
+                  <span className="text-[#5a4a3a]">Learn about materials and traditional methods</span>
                 </li>
               </ul>
-              <Button asChild className="bg-indian-blue hover:bg-indian-blue/90">
+              <Button asChild className="bg-[#a18267] hover:bg-[#8c6e53] text-white">
                 <Link to="/products">Explore & Learn</Link>
               </Button>
             </div>
@@ -100,7 +100,7 @@ const Index = () => {
                 />
               </div>
               <div className="absolute -bottom-6 -left-6 bg-white rounded-lg shadow-lg p-4 w-64">
-                <div className="text-sm font-medium mb-1">AI Cultural Guide</div>
+                <div className="text-sm font-medium mb-1 text-indian-brown">AI Cultural Guide</div>
                 <p className="text-xs text-muted-foreground">
                   "Discover how these lac bangles are handcrafted by artisans in Rajasthan using techniques passed down through generations..."
                 </p>
@@ -114,7 +114,7 @@ const Index = () => {
       <section className="py-16">
         <div className="container">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold mb-4">Artisan Crafts from Across India</h2>
+            <h2 className="text-3xl font-bold mb-4 text-indian-brown font-heading">Artisan Crafts from Across India</h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">
               Each region of India has its unique craft traditions. Discover authentic treasures from these culturally rich states.
             </p>
@@ -125,9 +125,9 @@ const Index = () => {
               <Link 
                 key={region} 
                 to={`/products?region=${region}`} 
-                className="bg-muted/50 hover:bg-muted transition-colors py-4 px-2 rounded-md text-center"
+                className="bg-[#f8f3ea] hover:bg-[#e8e0d4] transition-colors py-4 px-2 rounded-md text-center"
               >
-                <div className="font-medium">{region}</div>
+                <div className="font-medium text-indian-brown">{region}</div>
               </Link>
             ))}
           </div>

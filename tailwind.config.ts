@@ -62,7 +62,8 @@ export default {
 					mehendi: '#689F38',
 					marigold: '#FFA000',
 					clay: '#B66A3C',
-					spice: '#8D6E63'
+					spice: '#8D6E63',
+					brown: '#3c2e20'
 				}
 			},
 			borderRadius: {
@@ -99,8 +100,8 @@ export default {
 				shimmer: 'shimmer 2s infinite',
 			},
 			fontFamily: {
-				heading: ['Georgia', 'serif'],
-				body: ['Roboto', 'sans-serif']
+				heading: ['Playfair Display', 'serif'],
+				body: ['Raleway', 'sans-serif']
 			}
 		}
 	},

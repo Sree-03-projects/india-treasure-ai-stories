@@ -5,33 +5,29 @@ import { Link } from 'react-router-dom';
 
 const Hero = () => {
   return (
-    <div className="relative bg-secondary text-secondary-foreground overflow-hidden">
-      <div className="absolute inset-0 z-0">
-        <img 
-          src="https://images.unsplash.com/photo-1564670169556-a64903cb37a6?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80" 
-          alt="Indian handicrafts" 
-          className="w-full h-full object-cover opacity-30"
-        />
-      </div>
-      
-      <div className="container relative z-10 py-20 md:py-32">
-        <div className="max-w-3xl">
-          <h1 className="text-4xl md:text-6xl font-bold mb-4 text-white">
-            Discover Authentic <span className="text-indian-saffron">Indian</span> Treasures
+    <div className="relative bg-[#f8f3ea] overflow-hidden py-24 lg:py-32">
+      <div className="container grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+        <div className="max-w-xl">
+          <div className="text-indian-terracotta mb-4">UP TO 20% DISCOUNT ON</div>
+          <h1 className="text-5xl md:text-7xl font-bold mb-8 text-[#3c2e20] font-heading">
+            Culture And Heritage
           </h1>
-          <p className="text-lg md:text-xl text-gray-200 mb-8">
-            Explore the rich cultural heritage of India through traditional crafts, 
-            textiles, jewelry, and more. Each piece tells a story of artistry passed 
-            down through generations.
+          <p className="text-lg text-[#5a4a3a] mb-10">
+            "Journey Through Style: Where Every Piece Tells a Cultural Tale." Explore a 
+            curated collection of clothing, accessories, and footwear that caters to 
+            every taste and occasion.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4">
-            <Button asChild size="lg" className="bg-indian-saffron hover:bg-indian-saffron/90 text-white">
-              <Link to="/products">Shop Collection</Link>
-            </Button>
-            <Button asChild variant="outline" size="lg" className="border-white text-white hover:bg-white/10">
-              <Link to="/about">Our Story</Link>
-            </Button>
-          </div>
+          <Button asChild className="bg-[#a18267] hover:bg-[#8c6e53] text-white px-8 py-6 h-auto">
+            <Link to="/products">EXPLORE NOW</Link>
+          </Button>
+        </div>
+        
+        <div className="hidden lg:block relative">
+          <img 
+            src="/lovable-uploads/81588eeb-da0e-4216-8277-f25b20e21ebb.png" 
+            alt="Indian bride in traditional attire" 
+            className="w-full h-auto rounded-md"
+          />
         </div>
       </div>
     </div>
