@@ -13,7 +13,7 @@ interface CategoryCardProps {
 const CategoryCard: React.FC<CategoryCardProps> = ({ title, description, image, link }) => {
   return (
     <Link to={link} className="block h-full">
-      <Card className="overflow-hidden h-full group hover:shadow-md transition-all duration-300 border-none">
+      <Card className="overflow-hidden h-full group border-2 border-[#d2c5b2] transition-all duration-300 hover:border-[#8c6e53]">
         <div className="aspect-[4/3] overflow-hidden relative">
           <img 
             src={image} 
