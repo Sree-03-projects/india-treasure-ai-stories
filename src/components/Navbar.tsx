@@ -27,8 +27,15 @@ const Navbar = () => {
             </Link>
           </nav>
           
-          <Link to="/" className="text-3xl font-heading font-bold text-[#3c2e20] mx-auto md:mx-0 relative before:absolute before:w-6 before:h-6 before:-top-2 before:-left-2 before:border-t before:border-l before:border-[#8c6e53] before:opacity-70 after:absolute after:w-6 after:h-6 after:-bottom-2 after:-right-2 after:border-b after:border-r after:border-[#8c6e53] after:opacity-70">
-            InDiverse<span className="text-[#8c6e53]">.</span>
+          <Link to="/" className="flex items-center">
+            <img 
+              src="https://images.unsplash.com/photo-1604335398480-e8c535055161?ixlib=rb-1.2.1&auto=format&fit=crop&w=120&h=120&q=80" 
+              alt="InDiverse Logo" 
+              className="h-12 w-12 object-cover rounded-full border-2 border-[#8c6e53]"
+            />
+            <span className="ml-2 text-2xl font-heading font-bold text-[#3c2e20]">
+              InDiverse<span className="text-[#8c6e53]">.</span>
+            </span>
           </Link>
           
           <div className="flex items-center space-x-6">

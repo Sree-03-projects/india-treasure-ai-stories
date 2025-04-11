@@ -29,19 +29,20 @@ const Hero = () => {
         </div>
         
         <div className="hidden lg:block relative">
-          <div className="relative h-[450px] overflow-hidden rounded-md border-4 border-[#d2c5b2] shadow-lg bg-[#f8f3ea]/80 backdrop-blur-sm">
-            <div className="absolute inset-0 bg-[#8c6e53]/10 pattern-bg"></div>
-            <div className="absolute inset-0 flex items-center justify-center">
-              <div className="text-center p-8 relative">
-                <div className="absolute w-20 h-20 top-0 left-0 border-t-2 border-l-2 border-[#a18267] opacity-60"></div>
-                <div className="absolute w-20 h-20 bottom-0 right-0 border-b-2 border-r-2 border-[#a18267] opacity-60"></div>
-                <h3 className="text-4xl font-bold text-[#3c2e20] font-heading mb-4">InDiverse</h3>
-                <p className="text-[#5a4a3a] text-lg italic">Where Heritage Meets Artistry</p>
-                <div className="mt-8 h-[1px] w-32 bg-[#8c6e53] mx-auto"></div>
-                <div className="mt-8 flex justify-center">
-                  <div className="h-20 w-20 rounded-full overflow-hidden border-2 border-[#d2c5b2] bg-[#f8f3ea] flex items-center justify-center">
-                    <div className="text-[#8c6e53] font-heading">EST.<br/>2023</div>
-                  </div>
+          <div className="relative h-[450px] overflow-hidden rounded-md border-4 border-[#d2c5b2] shadow-lg">
+            <img 
+              src="https://images.unsplash.com/photo-1565942443631-9e2fd81d2066?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" 
+              alt="Where Heritage Meets Artistry" 
+              className="w-full h-full object-cover filter sepia-[0.3] brightness-[0.95]"
+            />
+            <div className="absolute inset-0 bg-[#8c6e53]/20"></div>
+            <div className="absolute inset-0 flex flex-col items-center justify-center text-center">
+              <h3 className="text-4xl font-bold text-white font-heading mb-4 text-shadow-lg">InDiverse</h3>
+              <p className="text-white text-lg italic bg-[#000]/30 px-4 py-2 rounded">Where Heritage Meets Artistry</p>
+              <div className="mt-8 h-[1px] w-32 bg-white mx-auto"></div>
+              <div className="mt-8">
+                <div className="h-20 w-20 rounded-full overflow-hidden border-2 border-white bg-[#000]/30 flex items-center justify-center">
+                  <div className="text-white font-heading">EST.<br/>2023</div>
                 </div>
               </div>
             </div>
