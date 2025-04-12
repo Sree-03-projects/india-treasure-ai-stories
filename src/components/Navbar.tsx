@@ -1,99 +1,116 @@
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Search, ShoppingBag, User, Menu, X } from 'lucide-react';
+import { Button } from "@/components/ui/button";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  // Handle scroll event
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 10) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   return (
-    <header className="sticky top-0 z-40 w-full bg-vintage-parchment/90 backdrop-blur-sm py-4 border-b border-vintage-brass/30 vintage-shadow">
+    <header 
+      className={`sticky top-0 z-40 w-full transition-all duration-300 ${
+        isScrolled 
+          ? 'bg-white/95 backdrop-blur-md shadow-sm'
+          : 'bg-transparent'
+      }`}
+    >
       <div className="container">
-        <div className="flex items-center justify-between">
-          <div className="lg:hidden">
-            <button 
-              onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="text-vintage-mahogany p-2"
-              aria-label="Toggle menu"
-            >
-              {isMenuOpen ? <X size={20} /> : <Menu size={20} />}
-            </button>
+        <div className="flex items-center justify-between h-16 md:h-20">
+          <div className="flex-1 flex justify-start">
+            <Link to="/" className="flex items-center">
+              <span className="text-2xl font-bold font-serif bg-gradient-to-r from-theme-blue to-theme-purple bg-clip-text text-transparent">
+                InDiverse
+              </span>
+            </Link>
           </div>
           
-          <nav className="hidden lg:flex items-center space-x-10">
-            <Link to="/" className="text-vintage-mahogany hover:text-vintage-leather transition-colors relative group">
-              <span className="font-serif uppercase tracking-wider text-sm">Home</span>
-              <span className="absolute -bottom-1 left-0 w-0 h-[1px] bg-vintage-brass transition-all duration-300 group-hover:w-full"></span>
+          <nav className="hidden md:flex items-center space-x-8">
+            <Link to="/" className="text-gray-800 hover:text-theme-blue transition-colors font-medium text-sm">
+              Home
             </Link>
-            <Link to="/products" className="text-vintage-mahogany hover:text-vintage-leather transition-colors relative group">
-              <span className="font-serif uppercase tracking-wider text-sm">Shop</span>
-              <span className="absolute -bottom-1 left-0 w-0 h-[1px] bg-vintage-brass transition-all duration-300 group-hover:w-full"></span>
+            <Link to="/products" className="text-gray-800 hover:text-theme-blue transition-colors font-medium text-sm">
+              Products
             </Link>
-            <Link to="/pages" className="text-vintage-mahogany hover:text-vintage-leather transition-colors relative group">
-              <span className="font-serif uppercase tracking-wider text-sm">Pages</span>
-              <span className="absolute -bottom-1 left-0 w-0 h-[1px] bg-vintage-brass transition-all duration-300 group-hover:w-full"></span>
+            <Link to="/about" className="text-gray-800 hover:text-theme-blue transition-colors font-medium text-sm">
+              About
             </Link>
-            <Link to="/contact" className="text-vintage-mahogany hover:text-vintage-leather transition-colors relative group">
-              <span className="font-serif uppercase tracking-wider text-sm">Contact</span>
-              <span className="absolute -bottom-1 left-0 w-0 h-[1px] bg-vintage-brass transition-all duration-300 group-hover:w-full"></span>
+            <Link to="/contact" className="text-gray-800 hover:text-theme-blue transition-colors font-medium text-sm">
+              Contact
             </Link>
           </nav>
           
-          <Link to="/" className="flex items-center">
-            <div className="historical-image overflow-hidden w-14 h-14 rounded-full border-2 border-vintage-brass">
-              <img 
-                src="https://images.unsplash.com/photo-1580747181135-5db59b0ffa0e?ixlib=rb-1.2.1&auto=format&fit=crop&w=120&h=120&q=80" 
-                alt="InDiverse Logo" 
-                className="h-full w-full object-cover"
-              />
-            </div>
-            <span className="ml-3 text-2xl font-accent font-medium text-vintage-mahogany">
-              InDiverse<span className="text-vintage-leather">.</span>
-            </span>
-          </Link>
-          
-          <div className="flex items-center space-x-6">
-            <button aria-label="Search" className="text-vintage-mahogany hover:text-vintage-leather transition-colors">
+          <div className="flex-1 flex justify-end items-center space-x-4">
+            <button aria-label="Search" className="text-gray-700 hover:text-theme-blue transition-colors p-1.5">
               <Search className="h-5 w-5" />
             </button>
-            <Link to="/cart" className="text-vintage-mahogany hover:text-vintage-leather transition-colors relative">
+            
+            <Link to="/cart" className="text-gray-700 hover:text-theme-blue transition-colors p-1.5 relative">
               <ShoppingBag className="h-5 w-5" />
-              <span className="absolute -top-1 -right-1 flex h-4 w-4 items-center justify-center rounded-full bg-vintage-leather text-[10px] font-medium text-vintage-parchment">0</span>
+              <span className="absolute -top-1 -right-1 flex h-4 w-4 items-center justify-center rounded-full bg-theme-purple text-[10px] font-medium text-white">0</span>
             </Link>
-            <button aria-label="Account" className="text-vintage-mahogany hover:text-vintage-leather transition-colors">
+            
+            <button aria-label="Account" className="text-gray-700 hover:text-theme-blue transition-colors p-1.5">
               <User className="h-5 w-5" />
             </button>
+            
+            <div className="md:hidden">
+              <Button 
+                variant="ghost" 
+                size="icon" 
+                onClick={() => setIsMenuOpen(!isMenuOpen)}
+                className="text-gray-700"
+                aria-label="Toggle menu"
+              >
+                {isMenuOpen ? <X size={20} /> : <Menu size={20} />}
+              </Button>
+            </div>
           </div>
         </div>
         
         {/* Mobile menu */}
         {isMenuOpen && (
-          <div className="lg:hidden mt-4 py-4 border-t border-vintage-brass/20 animate-fadeIn">
-            <nav className="flex flex-col space-y-4">
+          <div className="md:hidden py-4 animate-fadeIn">
+            <nav className="flex flex-col space-y-4 p-4">
               <Link 
                 to="/" 
-                className="text-vintage-mahogany hover:text-vintage-leather transition-colors py-2 font-serif text-center"
+                className="text-gray-800 hover:text-theme-blue transition-colors py-2 text-center"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Home
               </Link>
               <Link 
                 to="/products" 
-                className="text-vintage-mahogany hover:text-vintage-leather transition-colors py-2 font-serif text-center"
+                className="text-gray-800 hover:text-theme-blue transition-colors py-2 text-center"
                 onClick={() => setIsMenuOpen(false)}
               >
-                Shop
+                Products
               </Link>
               <Link 
-                to="/pages" 
-                className="text-vintage-mahogany hover:text-vintage-leather transition-colors py-2 font-serif text-center"
+                to="/about" 
+                className="text-gray-800 hover:text-theme-blue transition-colors py-2 text-center"
                 onClick={() => setIsMenuOpen(false)}
               >
-                Pages
+                About
               </Link>
               <Link 
                 to="/contact" 
-                className="text-vintage-mahogany hover:text-vintage-leather transition-colors py-2 font-serif text-center"
+                className="text-gray-800 hover:text-theme-blue transition-colors py-2 text-center"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Contact
