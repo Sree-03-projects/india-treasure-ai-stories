@@ -108,3 +108,11 @@
   background-color: #614F3D;
   color: #F8F3E6;
 }
+
+.image-filter-heritage {
+  filter: brightness(0.95) contrast(1.05);
+}
+
+.heritage-border {
+  border: 1px solid rgba(193, 180, 156, 0.5);
+}

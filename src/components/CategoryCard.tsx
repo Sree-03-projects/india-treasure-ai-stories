@@ -18,7 +18,7 @@ const CategoryCard: React.FC<CategoryCardProps> = ({ title, description, image, 
       case "jewelry":
         return "https://images.unsplash.com/photo-1618403088890-3d9ff6f4c8b1?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80";
       case "textiles":
-        return "https://images.unsplash.com/photo-1598030304671-5aa1d6f13fdd?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80";
+        return "public/lovable-uploads/0e78189d-eb53-4c00-a1af-af5e48847ab6.png";
       case "home decor":
         return "https://images.unsplash.com/photo-1597072689227-8882273e8f6a?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80";
       case "food":

@@ -1,4 +1,3 @@
-
 import { Product } from '../components/ProductCard';
 
 const products: Product[] = [
@@ -16,7 +15,7 @@ const products: Product[] = [
     name: "Kalamkari Hand-painted Saree",
     description: "Pure cotton saree featuring traditional Kalamkari art with mythological scenes, hand-painted using natural dyes. A masterpiece from Andhra Pradesh.",
     price: 5999,
-    image: "https://images.unsplash.com/photo-1611910979984-de1e5a772cd8?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+    image: "public/lovable-uploads/0e78189d-eb53-4c00-a1af-af5e48847ab6.png",
     category: "Textiles",
     region: "Andhra Pradesh"
   },
@@ -123,7 +122,7 @@ export const categories = [
     id: 2,
     name: "Textiles",
     description: "Authentic handwoven and hand-painted textiles and sarees",
-    image: "https://images.unsplash.com/photo-1611910979984-de1e5a772cd8?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+    image: "public/lovable-uploads/0e78189d-eb53-4c00-a1af-af5e48847ab6.png",
   },
   {
     id: 3,
