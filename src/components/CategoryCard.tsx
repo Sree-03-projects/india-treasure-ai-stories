@@ -16,7 +16,7 @@ const CategoryCard: React.FC<CategoryCardProps> = ({ title, description, image, 
   const getCategoryImage = () => {
     switch(title.toLowerCase()) {
       case "jewelry":
-        return "https://images.unsplash.com/photo-1618403088890-3d9ff6f4c8b1?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80";
+        return "public/lovable-uploads/2eae7f84-de4b-4205-9eda-deb6133d647d.png";
       case "textiles":
         return "public/lovable-uploads/0e78189d-eb53-4c00-a1af-af5e48847ab6.png";
       case "home decor":

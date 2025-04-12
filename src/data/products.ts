@@ -6,7 +6,7 @@ const products: Product[] = [
     name: "Rajasthani Lac Bangles Set",
     description: "Handcrafted lac bangles from Jaipur with intricate mirror work and traditional designs. Each set contains 6 bangles in vibrant colors.",
     price: 1299,
-    image: "https://images.unsplash.com/photo-1615397349754-cfa2066a298e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+    image: "public/lovable-uploads/2eae7f84-de4b-4205-9eda-deb6133d647d.png",
     category: "Jewelry",
     region: "Rajasthan"
   },
@@ -116,7 +116,7 @@ export const categories = [
     id: 1,
     name: "Jewelry",
     description: "Traditional handcrafted jewelry from across India",
-    image: "https://images.unsplash.com/photo-1615397349754-cfa2066a298e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+    image: "public/lovable-uploads/2eae7f84-de4b-4205-9eda-deb6133d647d.png",
   },
   {
     id: 2,
