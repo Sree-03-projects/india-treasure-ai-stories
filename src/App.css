@@ -5,14 +5,14 @@
 }
 
 .overlay-gradient {
-  background: linear-gradient(to top, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.2) 60%, rgba(0, 0, 0, 0) 100%);
+  background: linear-gradient(to top, rgba(77, 60, 48, 0.7) 0%, rgba(77, 60, 48, 0.2) 60%, rgba(77, 60, 48, 0) 100%);
 }
 
 .text-gradient {
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  background-image: linear-gradient(45deg, #3b82f6, #8b5cf6);
+  background-image: linear-gradient(45deg, #8C7262, #614F3D);
 }
 
 .card-hover {
@@ -66,4 +66,45 @@
   100% {
     transform: translateY(0px);
   }
+}
+
+.heritage-divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #C1B49C, transparent);
+  margin: 2rem 0;
+}
+
+.heritage-paper {
+  background-color: #F8F3E6;
+  background-image: 
+    linear-gradient(rgba(193, 180, 156, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(193, 180, 156, 0.05) 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+.heritage-button {
+  background-color: #614F3D;
+  color: #F8F3E6;
+  border: none;
+  padding: 0.5rem 1.5rem;
+  border-radius: 0.25rem;
+  transition: all 0.3s ease;
+}
+
+.heritage-button:hover {
+  background-color: #7D6D5D;
+}
+
+.heritage-button-outline {
+  background-color: transparent;
+  color: #614F3D;
+  border: 1px solid #614F3D;
+  padding: 0.5rem 1.5rem;
+  border-radius: 0.25rem;
+  transition: all 0.3s ease;
+}
+
+.heritage-button-outline:hover {
+  background-color: #614F3D;
+  color: #F8F3E6;
 }

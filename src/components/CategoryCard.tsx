@@ -32,20 +32,20 @@ const CategoryCard: React.FC<CategoryCardProps> = ({ title, description, image, 
 
   return (
     <Link to={link} className="block h-full">
-      <Card className="overflow-hidden h-full rounded-lg card-hover border-0 shadow-card hover:shadow-elevated">
+      <Card className="overflow-hidden h-full rounded-lg card-hover border-0 shadow-card hover:shadow-elevated heritage-border">
         <div className="relative">
           <div className="aspect-[4/3] overflow-hidden">
             <img 
               src={getCategoryImage()} 
               alt={title} 
-              className="object-cover w-full h-full transition-transform duration-700 image-filter hover:scale-105"
+              className="object-cover w-full h-full transition-transform duration-700 image-filter-heritage hover:scale-105"
             />
             
             <div className="absolute inset-0 overlay-gradient flex flex-col justify-end p-6">
               <div className="relative z-20">
-                <h3 className="text-white text-xl md:text-2xl font-bold font-serif mb-2">{title}</h3>
-                <p className="text-white/80 text-sm mt-1 line-clamp-2 mb-3">{description}</p>
-                <span className="inline-flex items-center text-white text-sm font-medium">
+                <h3 className="text-heritage-cream text-xl md:text-2xl font-bold font-serif mb-2">{title}</h3>
+                <p className="text-heritage-cream/80 text-sm mt-1 line-clamp-2 mb-3">{description}</p>
+                <span className="inline-flex items-center text-heritage-cream text-sm font-medium">
                   Explore <ArrowRight className="ml-1 h-3.5 w-3.5 transition-transform group-hover:translate-x-1" />
                 </span>
               </div>

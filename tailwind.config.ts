@@ -53,14 +53,19 @@ export default {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
 				},
-				// New modern theme colors
-				theme: {
-					blue: '#3b82f6',
-					indigo: '#6366f1',
-					purple: '#8b5cf6',
-					pink: '#ec4899',
-          			dark: '#1f2937',
-          			light: '#f8fafc'
+				// Heritage theme colors
+				heritage: {
+					beige: '#F5F0E5',
+					cream: '#F8F3E6',
+					sand: '#E2D9C8',
+					taupe: '#C1B49C',
+					mocha: '#7D6D5D',
+					umber: '#614F3D',
+					khaki: '#BFB39B',
+					brown: '#8C7262',
+					ivory: '#FFFEF2',
+					parchment: '#F5E8C6',
+					accent: '#4D3C30'
 				}
 			},
 			borderRadius: {
