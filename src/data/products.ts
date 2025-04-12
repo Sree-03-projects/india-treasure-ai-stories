@@ -24,7 +24,7 @@ const products: Product[] = [
     name: "Handmade Terracotta Pot Set",
     description: "Traditional terracotta pots crafted by skilled artisans. Perfect for home decor or planting. Set of 3 pots in different sizes.",
     price: 1499,
-    image: "https://images.unsplash.com/photo-1626106557976-5ab7ea3e640d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+    image: "public/lovable-uploads/28065d95-a2d0-404c-9bf4-4a55fbe5c748.png",
     category: "Home Decor",
     region: "Uttar Pradesh"
   },
@@ -128,7 +128,7 @@ export const categories = [
     id: 3,
     name: "Home Decor",
     description: "Beautiful handicrafts to adorn your living spaces",
-    image: "https://images.unsplash.com/photo-1626106557976-5ab7ea3e640d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+    image: "public/lovable-uploads/28065d95-a2d0-404c-9bf4-4a55fbe5c748.png",
   },
   {
     id: 4,
