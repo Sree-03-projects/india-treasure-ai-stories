@@ -1,73 +1,146 @@
 
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Button } from "@/components/ui/button";
 import { Link } from 'react-router-dom';
-import { ChevronRight } from 'lucide-react';
+import { ChevronRight, ChevronLeft } from 'lucide-react';
+
+// Banner data
+const banners = [
+  {
+    id: 1,
+    title: "Handcrafted Treasures",
+    subtitle: "Discover authentic Indian artistry",
+    image: "https://images.unsplash.com/photo-1555529902-5a3c529f0e95?ixlib=rb-1.2.1&auto=format&fit=crop&w=1600&q=80",
+    cta: "Shop Collection",
+    link: "/products?category=Sarees",
+    color: "indian-maroon",
+  },
+  {
+    id: 2,
+    title: "Festival of Colors",
+    subtitle: "Celebrate with traditional crafts",
+    image: "https://images.unsplash.com/photo-1603032813605-10d048565526?ixlib=rb-1.2.1&auto=format&fit=crop&w=1600&q=80",
+    cta: "Explore Festival Wear",
+    link: "/products?category=Festival",
+    color: "indian-blue",
+  },
+  {
+    id: 3,
+    title: "Meet the Artisans",
+    subtitle: "Stories behind every creation",
+    image: "https://images.unsplash.com/photo-1575842832166-a2439905e27c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1600&q=80",
+    cta: "Discover Stories",
+    link: "/about",
+    color: "indian-gold",
+  },
+];
 
 const Hero = () => {
+  const [activeIndex, setActiveIndex] = useState(0);
+  
+  // Auto-advance carousel
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setActiveIndex((current) => (current + 1) % banners.length);
+    }, 5000);
+    
+    return () => clearInterval(interval);
+  }, []);
+  
+  const goToPrevious = () => {
+    setActiveIndex((current) => (current === 0 ? banners.length - 1 : current - 1));
+  };
+  
+  const goToNext = () => {
+    setActiveIndex((current) => (current + 1) % banners.length);
+  };
+  
+  const goToSlide = (index: number) => {
+    setActiveIndex(index);
+  };
+  
+  const activeBanner = banners[activeIndex];
+  
   return (
-    <div className="relative bg-heritage-beige heritage-paper overflow-hidden">
-      {/* Texture overlay */}
-      <div className="absolute inset-0 heritage-texture"></div>
-      
-      <div className="container relative z-10 py-20 md:py-32">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          <div className="slide-up">
-            <div className="flex items-center mb-4">
-              <div className="w-12 h-0.5 bg-heritage-taupe mr-4"></div>
-              <span className="text-sm uppercase tracking-widest text-heritage-mocha">Heritage Collection</span>
-            </div>
+    <div className="relative overflow-hidden bg-gray-50">
+      {/* Main banner */}
+      <div className="relative w-full h-[400px] md:h-[500px] overflow-hidden">
+        {banners.map((banner, index) => (
+          <div 
+            key={banner.id} 
+            className={`absolute inset-0 transition-opacity duration-1000 ${
+              index === activeIndex ? "opacity-100 z-10" : "opacity-0 z-0"
+            }`}
+          >
+            <div className="absolute inset-0 bg-gradient-to-r from-black/40 to-transparent z-10"></div>
+            <img 
+              src={banner.image} 
+              alt={banner.title} 
+              className="w-full h-full object-cover object-center"
+            />
             
-            <h1 className="text-4xl md:text-6xl font-serif font-bold mb-6 leading-tight text-heritage-accent">
-              Timeless Indian <br />
-              <span className="text-gradient-heritage">Artisan Treasures</span>
-            </h1>
-            
-            <p className="text-lg mb-8 text-heritage-umber/90 max-w-xl">
-              Discover the rich cultural heritage of India through our carefully curated collection of authentic handcrafted treasures, each piece telling a story that spans generations.
-            </p>
-            
-            <div className="flex flex-wrap gap-4">
-              <Button asChild size="lg" className="bg-heritage-accent hover:bg-heritage-brown text-heritage-cream btn-shine">
-                <Link to="/products" className="group">
-                  Explore Collection
-                  <ChevronRight className="ml-2 h-4 w-4 transform group-hover:translate-x-1 transition-transform" />
-                </Link>
-              </Button>
-              
-              <Button asChild variant="outline" size="lg" className="border-heritage-taupe text-heritage-accent hover:bg-heritage-taupe/10">
-                <Link to="/about">Our Story</Link>
-              </Button>
-            </div>
-          </div>
-          
-          <div className="hidden lg:block">
-            <div className="relative fade-in">
-              <div className="absolute -inset-4 bg-heritage-taupe/10 rounded-lg -z-10 blur-md"></div>
-              <img 
-                src="https://images.unsplash.com/photo-1565945887714-d5139f4eb0ce?ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80" 
-                alt="Indian Heritage Craftsmanship" 
-                className="w-full rounded-lg shadow-lg h-[500px] object-cover image-filter-heritage border border-heritage-sand"
-              />
-              
-              <div className="absolute -right-10 -bottom-10 bg-heritage-ivory rounded-lg p-5 shadow-card scale-in animate-delay-300 max-w-xs heritage-border">
-                <div className="flex items-start space-x-3">
-                  <div className="bg-heritage-taupe/20 text-heritage-accent p-2 rounded-full">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-sparkles"><path d="m12 3-1.9 5.8a2 2 0 0 1-1.3 1.3L3 12l5.8 1.9a2 2 0 0 1 1.3 1.3L12 21l1.9-5.8a2 2 0 0 1 1.3-1.3L21 12l-5.8-1.9a2 2 0 0 1-1.3-1.3Z"/></svg>
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-heritage-accent">Artisan Craftsmanship</h3>
-                    <p className="text-sm text-heritage-mocha">Each piece carries centuries of tradition, crafted by skilled artisans using time-honored techniques.</p>
-                  </div>
+            {/* Banner content */}
+            <div className="absolute inset-0 flex items-center z-20">
+              <div className="container px-6 md:px-8">
+                <div className="max-w-lg">
+                  <span className={`inline-block px-4 py-1 rounded-full text-white text-sm font-medium mb-4 bg-${banner.color}`}>
+                    NEW COLLECTION
+                  </span>
+                  <h1 className="text-4xl md:text-5xl font-bold text-white mb-2 font-serif">
+                    {banner.title}
+                  </h1>
+                  <p className="text-lg md:text-xl text-white/90 mb-6">
+                    {banner.subtitle}
+                  </p>
+                  <Button asChild size="lg" className={`bg-${banner.color} hover:bg-${banner.color}/90 text-white`}>
+                    <Link to={banner.link} className="group">
+                      {banner.cta}
+                      <ChevronRight className="ml-2 h-4 w-4 transform group-hover:translate-x-1 transition-transform" />
+                    </Link>
+                  </Button>
                 </div>
               </div>
             </div>
           </div>
+        ))}
+        
+        {/* Navigation buttons */}
+        <div className="absolute inset-y-0 left-0 right-0 flex justify-between items-center px-4 z-30">
+          <button 
+            onClick={goToPrevious} 
+            className="h-10 w-10 rounded-full bg-white/80 backdrop-blur-sm flex items-center justify-center hover:bg-white transition shadow-sm"
+            aria-label="Previous slide"
+          >
+            <ChevronLeft className="h-5 w-5 text-gray-800" />
+          </button>
+          <button 
+            onClick={goToNext} 
+            className="h-10 w-10 rounded-full bg-white/80 backdrop-blur-sm flex items-center justify-center hover:bg-white transition shadow-sm"
+            aria-label="Next slide"
+          >
+            <ChevronRight className="h-5 w-5 text-gray-800" />
+          </button>
+        </div>
+        
+        {/* Pagination dots */}
+        <div className="absolute bottom-4 left-0 right-0 flex justify-center space-x-2 z-30">
+          {banners.map((_, index) => (
+            <button
+              key={index}
+              onClick={() => goToSlide(index)}
+              className={`h-2 rounded-full transition-all ${
+                index === activeIndex 
+                  ? "w-8 bg-white" 
+                  : "w-2 bg-white/50 hover:bg-white/80"
+              }`}
+              aria-label={`Go to slide ${index + 1}`}
+            />
+          ))}
         </div>
       </div>
       
-      {/* Decorative border at bottom */}
-      <div className="h-2 w-full bg-gradient-to-r from-heritage-beige via-heritage-taupe to-heritage-beige opacity-40"></div>
+      {/* Decorative border */}
+      <div className="h-2 w-full bg-gradient-to-r from-indian-maroon via-indian-gold to-indian-green"></div>
     </div>
   );
 };

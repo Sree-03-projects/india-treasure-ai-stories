@@ -4,6 +4,104 @@
   margin: 0 auto;
 }
 
+/* Heritage-inspired themed colors */
+.indian-maroon {
+  color: #9B2335;
+}
+
+.indian-saffron {
+  color: #F4B400;
+}
+
+.indian-green {
+  color: #116548;
+}
+
+.indian-blue {
+  color: #26619C;
+}
+
+.indian-gold {
+  color: #D4AF37;
+}
+
+.bg-indian-maroon {
+  background-color: #9B2335;
+}
+
+.bg-indian-saffron {
+  background-color: #F4B400;
+}
+
+.bg-indian-green {
+  background-color: #116548;
+}
+
+.bg-indian-blue {
+  background-color: #26619C;
+}
+
+.bg-indian-gold {
+  background-color: #D4AF37;
+}
+
+/* Myntra-inspired UI elements */
+.myntra-card {
+  transition: all 0.3s ease;
+  border-radius: 4px;
+  overflow: hidden;
+  background-color: white;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.myntra-card:hover {
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transform: translateY(-2px);
+}
+
+.myntra-input {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 8px 12px;
+  font-size: 14px;
+  width: 100%;
+  transition: border-color 0.2s;
+}
+
+.myntra-input:focus {
+  border-color: #614F3D;
+  outline: none;
+}
+
+.myntra-button {
+  background-color: #614F3D;
+  color: white;
+  padding: 8px 16px;
+  border-radius: 4px;
+  font-weight: 500;
+  transition: background-color 0.2s;
+}
+
+.myntra-button:hover {
+  background-color: #7D6D5D;
+}
+
+.myntra-button-outline {
+  background-color: transparent;
+  color: #614F3D;
+  border: 1px solid #614F3D;
+  padding: 8px 16px;
+  border-radius: 4px;
+  font-weight: 500;
+  transition: all 0.2s;
+}
+
+.myntra-button-outline:hover {
+  background-color: #614F3D;
+  color: white;
+}
+
+/* Overlay gradients */
 .overlay-gradient {
   background: linear-gradient(to top, rgba(77, 60, 48, 0.7) 0%, rgba(77, 60, 48, 0.2) 60%, rgba(77, 60, 48, 0) 100%);
 }
@@ -15,11 +113,12 @@
   background-image: linear-gradient(45deg, #8C7262, #614F3D);
 }
 
-.card-hover {
+/* Animation classes */
+.hover-lift {
   transition: all 0.3s ease;
 }
 
-.card-hover:hover {
+.hover-lift:hover {
   transform: translateY(-5px);
   box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
 }
@@ -68,6 +167,7 @@
   }
 }
 
+/* Heritage-inspired decorative elements */
 .heritage-divider {
   height: 1px;
   background: linear-gradient(90deg, transparent, #C1B49C, transparent);
@@ -82,80 +182,12 @@
   background-size: 20px 20px;
 }
 
-.heritage-button {
-  background-color: #614F3D;
-  color: #F8F3E6;
-  border: none;
-  padding: 0.5rem 1.5rem;
-  border-radius: 0.25rem;
-  transition: all 0.3s ease;
-}
-
-.heritage-button:hover {
-  background-color: #7D6D5D;
-}
-
-.heritage-button-outline {
-  background-color: transparent;
-  color: #614F3D;
-  border: 1px solid #614F3D;
-  padding: 0.5rem 1.5rem;
-  border-radius: 0.25rem;
-  transition: all 0.3s ease;
-}
-
-.heritage-button-outline:hover {
-  background-color: #614F3D;
-  color: #F8F3E6;
-}
-
-.image-filter-heritage {
-  filter: brightness(0.95) contrast(1.05);
-}
-
 .heritage-border {
   border: 1px solid rgba(193, 180, 156, 0.5);
 }
 
-/* Heritage-inspired themed colors */
-.indian-maroon {
-  color: #9B2335;
-}
-
-.indian-saffron {
-  color: #F4B400;
-}
-
-.indian-green {
-  color: #116548;
-}
-
-.indian-blue {
-  color: #26619C;
-}
-
-.indian-gold {
-  color: #D4AF37;
-}
-
-.bg-indian-maroon {
-  background-color: #9B2335;
-}
-
-.bg-indian-saffron {
-  background-color: #F4B400;
-}
-
-.bg-indian-green {
-  background-color: #116548;
-}
-
-.bg-indian-blue {
-  background-color: #26619C;
-}
-
-.bg-indian-gold {
-  background-color: #D4AF37;
+.image-filter-heritage {
+  filter: brightness(0.95) contrast(1.05);
 }
 
 /* Traditional patterns and borders */
@@ -195,7 +227,153 @@
   border: 1px solid #C1B49C;
 }
 
-/* Scrollbar customization */
+/* Myntra-style tabs */
+.myntra-tabs {
+  display: flex;
+  border-bottom: 1px solid #ddd;
+  margin-bottom: 16px;
+}
+
+.myntra-tab {
+  padding: 12px 16px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #777;
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+  transition: all 0.2s;
+}
+
+.myntra-tab.active {
+  color: #614F3D;
+  border-bottom-color: #614F3D;
+}
+
+.myntra-tab:hover:not(.active) {
+  color: #614F3D;
+  border-bottom-color: #ddd;
+}
+
+/* Myntra-style rating stars */
+.stars-outer {
+  position: relative;
+  display: inline-block;
+}
+
+.stars-inner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 0;
+}
+
+.stars-outer::before {
+  content: "\2605 \2605 \2605 \2605 \2605";
+  color: #ccc;
+}
+
+.stars-inner::before {
+  content: "\2605 \2605 \2605 \2605 \2605";
+  color: #f8ce0b;
+}
+
+/* Myntra-style product badges */
+.product-badge {
+  display: inline-block;
+  padding: 2px 6px;
+  border-radius: 2px;
+  font-size: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.badge-new {
+  background-color: #ff3f6c;
+  color: white;
+}
+
+.badge-sale {
+  background-color: #14cda8;
+  color: white;
+}
+
+.badge-exclusive {
+  background-color: #f4b400;
+  color: white;
+}
+
+/* Myntra-style product details page */
+.product-details-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+}
+
+@media (min-width: 768px) {
+  .product-details-container {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.size-selector {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 16px 0;
+}
+
+.size-option {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #ddd;
+  border-radius: 50%;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.size-option:hover {
+  border-color: #614F3D;
+}
+
+.size-option.selected {
+  border-color: #614F3D;
+  background-color: #614F3D;
+  color: white;
+}
+
+/* Myntra-style color selector */
+.color-selector {
+  display: flex;
+  gap: 8px;
+  margin: 16px 0;
+}
+
+.color-option {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  cursor: pointer;
+  position: relative;
+}
+
+.color-option.selected::after {
+  content: '';
+  position: absolute;
+  top: -4px;
+  left: -4px;
+  right: -4px;
+  bottom: -4px;
+  border: 1px solid #614F3D;
+  border-radius: 50%;
+}
+
+/* Custom scrollbar styling */
 .scrollbar-hide {
   -ms-overflow-style: none;  /* IE and Edge */
   scrollbar-width: none;  /* Firefox */
@@ -224,62 +402,5 @@
   background: rgba(97, 79, 61, 0.5);
 }
 
-/* Texture and fabric-inspired backgrounds */
-.texture-jute {
-  background-color: #f5f0e1;
-  background-image: url("data:image/svg+xml,%3Csvg width='6' height='6' viewBox='0 0 6 6' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23c1b49c' fill-opacity='0.1' fill-rule='evenodd'%3E%3Cpath d='M5 0h1L0 5v1H5v-1H1z'/%3E%3C/g%3E%3C/svg%3E");
-}
-
-.texture-silk {
-  background-color: #f8f3e6;
-  background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23c1b49c' fill-opacity='0.1' fill-rule='evenodd'%3E%3Cpath d='M0 0h20v20H0V0zm10 17.5a7.5 7.5 0 100-15 7.5 7.5 0 000 15zm0-5a2.5 2.5 0 100-5 2.5 2.5 0 000 5z'/%3E%3C/g%3E%3C/svg%3E");
-}
-
-/* Mandala-inspired loader animation */
-.mandala-loader {
-  width: 40px;
-  height: 40px;
-  border: 3px solid rgba(193, 180, 156, 0.3);
-  border-radius: 50%;
-  border-top-color: #C1B49C;
-  animation: mandala-spin 1s linear infinite;
-  position: relative;
-}
-
-.mandala-loader::before,
-.mandala-loader::after {
-  content: '';
-  position: absolute;
-  top: -3px;
-  left: -3px;
-  width: 100%;
-  height: 100%;
-  border: 3px solid transparent;
-  border-radius: 50%;
-}
-
-.mandala-loader::before {
-  border-top-color: #8C7262;
-  transform: rotate(120deg);
-}
-
-.mandala-loader::after {
-  border-top-color: #614F3D;
-  transform: rotate(240deg);
-}
-
-@keyframes mandala-spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
-}
-
-/* Focus styles for accessibility */
-.heritage-focus {
-  transition: outline-color 0.2s ease;
-  outline: 2px solid transparent;
-  outline-offset: 2px;
-}
-
-.heritage-focus:focus-visible {
-  outline-color: #8C7262;
-}
+/* Add Google Font imports for Playfair Display and Poppins */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap');

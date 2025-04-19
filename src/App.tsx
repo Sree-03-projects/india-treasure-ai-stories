@@ -11,6 +11,7 @@ import Cart from "./pages/Cart";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
+import ChatAssistant from "./components/ChatAssistant";
 
 const queryClient = new QueryClient();
 
@@ -29,6 +30,7 @@ const App = () => (
           <Route path="/contact" element={<Contact />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
+        <ChatAssistant />
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>
