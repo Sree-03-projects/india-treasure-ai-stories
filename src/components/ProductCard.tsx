@@ -22,7 +22,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
   
   return (
     <div 
-      className="group relative bg-white overflow-hidden rounded"
+      className="group relative bg-white overflow-hidden rounded shadow-sm hover:shadow-myntra-hover transition-all duration-300"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
@@ -43,7 +43,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
           <button className="flex items-center justify-center rounded-full h-10 w-10 bg-white shadow-sm hover:bg-gray-50 transition" aria-label="Add to wishlist">
             <Heart className="h-5 w-5 text-gray-700" />
           </button>
-          <button className="flex items-center justify-center bg-heritage-accent text-white px-4 py-2 rounded-full shadow-sm hover:bg-heritage-accent/90 transition">
+          <button className="flex items-center justify-center bg-indian-maroon text-white px-4 py-2 rounded-full shadow-sm hover:bg-indian-maroon/90 transition">
             <ShoppingBag className="h-4 w-4 mr-1" />
             <span className="text-sm font-medium">Add to Bag</span>
           </button>
@@ -53,7 +53,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
       {/* Product badges */}
       <div className="absolute top-2 left-2 flex flex-col gap-1">
         {product.region && (
-          <span className="bg-white/90 backdrop-blur-sm text-xs px-2 py-1 rounded font-medium text-heritage-accent">
+          <span className="bg-white/90 backdrop-blur-sm text-xs px-2 py-1 rounded font-medium text-indian-maroon">
             {product.region}
           </span>
         )}
@@ -71,7 +71,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
       <div className="p-3">
         <div className="text-xs text-gray-500 mb-1">{product.category}</div>
         <Link to={`/product/${product.id}`}>
-          <h3 className="font-medium text-gray-800 hover:text-heritage-accent transition-colors line-clamp-1">
+          <h3 className="font-medium text-gray-800 hover:text-indian-maroon transition-colors line-clamp-1">
             {product.name}
           </h3>
         </Link>
