@@ -80,7 +80,7 @@ const Login = () => {
               className="mx-auto h-16 w-auto"
             />
             <h2 className="mt-6 text-3xl font-bold tracking-tight text-heritage-accent font-serif">
-              Welcome to Indiverse
+              Login to Indiverse
             </h2>
             <p className="mt-2 text-sm text-muted-foreground">
               Please log in to explore India's treasures
@@ -133,9 +133,9 @@ const Login = () => {
             </div>
 
             <div className="text-right">
-              <button type="button" className="text-sm text-indian-maroon hover:text-indian-maroon/80">
+              <Link to="/forgot-password" className="text-sm text-indian-maroon hover:text-indian-maroon/80">
                 Forgot your password?
-              </button>
+              </Link>
             </div>
 
             <Button type="submit" className="w-full bg-indian-maroon hover:bg-indian-maroon/90">
@@ -165,19 +165,19 @@ const Login = () => {
 
           <p className="text-center text-sm text-muted-foreground">
             Don't have an account?{' '}
-            <span className="font-medium text-indian-maroon hover:text-indian-maroon/80 cursor-pointer">
+            <Link to="/signup" className="font-medium text-indian-maroon hover:text-indian-maroon/80">
               Sign up
-            </span>
+            </Link>
           </p>
         </div>
 
         {/* Footer Links */}
         <div className="mt-8 text-center text-sm text-muted-foreground">
-          <span className="mx-2 hover:text-foreground cursor-pointer">About Us</span>
+          <Link to="/about" className="mx-2 hover:text-foreground">About Us</Link>
           <span>·</span>
-          <span className="mx-2 hover:text-foreground cursor-pointer">Privacy Policy</span>
+          <Link to="/privacy" className="mx-2 hover:text-foreground">Privacy Policy</Link>
           <span>·</span>
-          <span className="mx-2 hover:text-foreground cursor-pointer">Terms of Service</span>
+          <Link to="/terms" className="mx-2 hover:text-foreground">Terms of Service</Link>
         </div>
       </div>
     </div>
