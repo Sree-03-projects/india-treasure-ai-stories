@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { ChevronRight } from 'lucide-react';
@@ -9,35 +8,35 @@ const categories = [
     id: 1,
     name: "Silver Jhumkas",
     description: "Traditional oxidized silver earrings",
-    image: "https://images.unsplash.com/photo-1617606002806-94e279c22567",
+    image: "public/lovable-uploads/2eae7f84-de4b-4205-9eda-deb6133d647d.png",
     link: "/products?category=Jewelry",
   },
   {
     id: 2,
     name: "Lakh ki Choodiyan",
     description: "Vibrant glass bangles",
-    image: "https://images.unsplash.com/photo-1575842832166-a2439905e27c",
+    image: "public/lovable-uploads/0e78189d-eb53-4c00-a1af-af5e48847ab6.png",
     link: "/products?category=Bangles",
   },
   {
     id: 3,
     name: "Tribal Jewelry",
     description: "Authentic tribal craftsmanship",
-    image: "https://images.unsplash.com/photo-1602024242516-fbc9d4fda4b6",
+    image: "public/lovable-uploads/28065d95-a2d0-404c-9bf4-4a55fbe5c748.png",
     link: "/products?category=Tribal",
   },
   {
     id: 4,
     name: "Madhubani Paintings",
     description: "Folk art masterpieces",
-    image: "https://images.unsplash.com/photo-1605812860427-4024433a70fd",
+    image: "public/lovable-uploads/81588eeb-da0e-4216-8277-f25b20e21ebb.png",
     link: "/products?category=Art",
   },
   {
     id: 5,
     name: "Mango Pickles",
     description: "Traditional homemade taste",
-    image: "https://images.unsplash.com/photo-1618160702438-9b02ab6515c9",
+    image: "public/lovable-uploads/28065d95-a2d0-404c-9bf4-4a55fbe5c748.png",
     link: "/products?category=Food",
   }
 ];

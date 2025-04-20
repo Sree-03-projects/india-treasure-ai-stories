@@ -6,7 +6,7 @@ const products: Product[] = [
     name: "Rajasthani Lac Bangles Set",
     description: "Handcrafted lac bangles from Jaipur with intricate mirror work and traditional designs. Each set contains 6 bangles in vibrant colors.",
     price: 1299,
-    image: "public/lovable-uploads/2eae7f84-de4b-4205-9eda-deb6133d647d.png",
+    image: "public/lovable-uploads/0e78189d-eb53-4c00-a1af-af5e48847ab6.png",
     category: "Jewelry",
     region: "Rajasthan"
   },
@@ -15,7 +15,7 @@ const products: Product[] = [
     name: "Kalamkari Hand-painted Saree",
     description: "Pure cotton saree featuring traditional Kalamkari art with mythological scenes, hand-painted using natural dyes. A masterpiece from Andhra Pradesh.",
     price: 5999,
-    image: "public/lovable-uploads/0e78189d-eb53-4c00-a1af-af5e48847ab6.png",
+    image: "public/lovable-uploads/81588eeb-da0e-4216-8277-f25b20e21ebb.png",
     category: "Textiles",
     region: "Andhra Pradesh"
   },

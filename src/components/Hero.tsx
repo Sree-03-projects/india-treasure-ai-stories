@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { Button } from "@/components/ui/button";
 import { Link } from 'react-router-dom';
@@ -10,7 +9,7 @@ const banners = [
     id: 1,
     title: "Traditional Silver Jhumkas",
     subtitle: "Timeless elegance in every design",
-    image: "https://images.unsplash.com/photo-1617606002806-94e279c22567",
+    image: "public/lovable-uploads/2eae7f84-de4b-4205-9eda-deb6133d647d.png",
     cta: "Shop Jewelry",
     link: "/products?category=Jewelry",
     color: "indian-maroon",
@@ -19,7 +18,7 @@ const banners = [
     id: 2,
     title: "Madhubani Magic",
     subtitle: "Folk art that tells stories",
-    image: "https://images.unsplash.com/photo-1605812860427-4024433a70fd",
+    image: "public/lovable-uploads/81588eeb-da0e-4216-8277-f25b20e21ebb.png",
     cta: "Explore Art",
     link: "/products?category=Art",
     color: "indian-gold",
@@ -28,7 +27,7 @@ const banners = [
     id: 3,
     title: "Handcrafted Bangles",
     subtitle: "Colors of tradition",
-    image: "https://images.unsplash.com/photo-1575842832166-a2439905e27c",
+    image: "public/lovable-uploads/0e78189d-eb53-4c00-a1af-af5e48847ab6.png",
     cta: "View Collection",
     link: "/products?category=Bangles",
     color: "indian-blue",
