@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { ChevronRight } from 'lucide-react';
@@ -38,6 +39,13 @@ const categories = [
     description: "Traditional homemade taste",
     image: "public/lovable-uploads/28065d95-a2d0-404c-9bf4-4a55fbe5c748.png",
     link: "/products?category=Food",
+  },
+  {
+    id: 6,
+    name: "Handmade Bangles",
+    description: "Exquisite handcrafted traditional bangles",
+    image: "public/lovable-uploads/4efa1335-57d7-41e4-ba32-ca86b2cacde6.png",
+    link: "/products?category=HandmadeBangles",
   }
 ];
 
