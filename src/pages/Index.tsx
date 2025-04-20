@@ -1,7 +1,7 @@
-
 import React from 'react';
 import Layout from '../components/Layout';
 import Hero from '../components/Hero';
+import CategoryShowcase from '../components/CategoryShowcase';
 import ProductCard from '../components/ProductCard';
 import CategoryCard from '../components/CategoryCard';
 import ChatAssistant from '../components/ChatAssistant';
@@ -34,44 +34,8 @@ const featuredArtisan = {
 const Index = () => {
   return (
     <Layout>
-      {/* Hero Banner Carousel */}
       <Hero />
-      
-      {/* Categories Section */}
-      <section className="py-12 bg-gray-50/80">
-        <div className="container">
-          <div className="flex flex-col md:flex-row justify-between items-center mb-8">
-            <h2 className="text-2xl md:text-3xl font-serif font-bold text-heritage-accent">Shop by Category</h2>
-            <Link to="/products" className="text-sm font-medium text-heritage-accent hover:text-heritage-umber flex items-center">
-              All Categories
-              <ChevronRight className="h-4 w-4 ml-1" />
-            </Link>
-          </div>
-          
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
-            {categories.map((category, index) => (
-              <Link 
-                key={index} 
-                to={`/products?category=${category.name}`}
-                className="group"
-              >
-                <div className="bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow">
-                  <div className="aspect-square overflow-hidden">
-                    <img 
-                      src={category.image} 
-                      alt={category.name} 
-                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                    />
-                  </div>
-                  <div className="p-3 text-center">
-                    <h3 className="font-medium text-heritage-accent">{category.name}</h3>
-                  </div>
-                </div>
-              </Link>
-            ))}
-          </div>
-        </div>
-      </section>
+      <CategoryShowcase />
       
       {/* Trending section */}
       <section className="py-12">
